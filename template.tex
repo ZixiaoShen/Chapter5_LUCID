@@ -1,9 +1,3 @@
-%% Unofficial beamer template for IMPA.
-%% Author: Rafael Vieira Westenberger, IMPA, Brazil
-%% Figures and colors chosen according to:
-%% https://impa.br/wp-content/uploads/2016/12/manual_marca_impa.pdf
-%% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-
 \documentclass[aspectratio=1610]{beamer}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -59,21 +53,18 @@
 
 %% Defines Title Page.
 
-\title{A Novel Meta Learning Framework for Feature Selection using Data Synthesis and Fuzzy Similarity\\}
-\subtitle{\textit{IEEE World Congress on Computational Intelligence (WCCI) 2020}}
-\author{Zixiao Shen\footnote
-            {\label{1} Intelligent Modelling and Analysis Group, School of Computer Science}\footnote
-            {\label{2} Lab for Uncertainty in Data and Decision Making (LUCID)}\footnote
-            {\label{3} University of Nottingham, Nottingham, NG8 1BB, United Kingdom},
-        Xin Chen\textsuperscript{\ref{1}\ref{3}} \&
-     %       {\label{3} University of Nottingham, Nottingham, NG8 1BB, United Kingdom} \& 
-        Jonathan M. Garibaldi\textsuperscript{\ref{1}\ref{2}\ref{3}}}
+\title{Ensemble Framework with Fuzzy Methods\\}
+\subtitle{\textit{Chapter 5 of the PhD Thesis}}
+\author{Zixiao Shen
+	\footnote{\label{1} Intelligent Modelling and Analysis Group, School of Computer Science}
+	\footnote{\label{2} Lab for Uncertainty in Data and Decision Making (LUCID)}
+	\footnote{\label{3} University of Nottingham, Nottingham, NG8 1BB, United Kingdom}}
 \titlegraphic{\vspace*{2em}
               \includegraphics[scale=0.25]
                 {nott_logo/UoN_logo.png}}
 \institute{Presented by:\\ 
             Zixiao Shen\\
-            22$^\text{nd}$ July 2020}
+            2$^\text{nd}$ Oct 2020}
 \date{\textit{\tiny{\url{}}}}
 
 %https://arxiv.org/pdf/2005.09856.pdf
@@ -113,7 +104,6 @@
 		\item The performance of the various FS methods is data dependent;
 		\item It's not possible to state categorically the optimal FS method for all kinds of data.
 	\end{itemize}
-
 \end{frame}
 
 
@@ -141,42 +131,30 @@
 	\end{column}
 
 \end{columns}
-
 \end{frame}
 
 
 
-\section{Background}
+\section{Literature Review}
 \begin{frame}
-\frametitle{Background \UoN}
-	\begin{block}{Definition}
+\frametitle{Literature Review \UoN}
+	\begin{block}{Homogeneous approach (Data variation approach)}
 		\begin{itemize}
-			\item Meta learning is defined as a process of learning the meta-knowledge to improve model learning using machine learning and data mining methods;
-			\item Two main aspects of research: algorithm selection and parameter selection.
+			\item The same FS method using different training data are implemented on the different nodes distributed by the dataset.
 		\end{itemize}
 	\end{block}
 		
-	\begin{block}{Main Issues of Meta Learning}
-		\begin{enumerate}
-			\item Construction of A Data Repository for Training:
-				\begin{itemize}
-					\item Synthesized datasets are proposed to construct a large data repository.
-				\end{itemize}
-			\item Selection of Meta Features:
-				\begin{itemize}
-					\item A number of widely used meta features are implemented in our study.
-				\end{itemize}
-			\item Choice of A Recommendation Method:
-				\begin{itemize}
-					\item A fuzzy similarity based framework is implemented to achieve the decision making~\footfullcite{shen2018performance}.
-				\end{itemize}
-		\end{enumerate}
+	\begin{block}{Heterogeneous approach (Function variation approach)}
+		\begin{itemize}
+			\item Different FS methods are applied on the same training dataset.
+		\end{itemize}
 	\end{block}
 \end{frame}
 
 
 \section{Methodology}
 \subsection{Overall Framework}
+
 \begin{frame}
 \frametitle{Overall Framework \UoN}
 	\begin{figure}
